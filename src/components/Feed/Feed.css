@@ -1,0 +1,21 @@
+.Feed{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 1rem;
+    gap: 1rem;
+}
+
+.Feed>img{
+    width: 100%;
+    max-height: 35rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.feedReact{
+    display: flex;
+    align-items: start;
+    gap: 1.5rem;
+}

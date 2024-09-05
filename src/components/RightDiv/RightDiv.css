@@ -1,0 +1,16 @@
+.RightDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+   
+}
+
+.navIcon{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.navIcon>svg{
+    width: 2.5rem;
+    height: 2.5rem;
+}
