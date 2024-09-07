@@ -1,7 +1,6 @@
 import React from "react";
 import './Feed.css';
-import { 
-    UilShareAlt, UilThumbsUp,UilCommentAlt, UilThumbsDown } from '@iconscout/react-unicons';
+import {  UilShareAlt, UilThumbsUp,UilCommentAlt, UilThumbsDown } from '@iconscout/react-unicons';
 
 const Feed = ({data}) => {
     return(
