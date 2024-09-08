@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt';
 
 export const registerUser = async(req, res) => {
     const { username, password, firstname, lastname } = req.body;
+    
 
         const salt = await bcrypt.genSalt(10);
         const hasPass= await bcrypt.hash(password,salt)
@@ -22,8 +23,6 @@ export const registerUser = async(req, res) => {
 
 export const loginUser = async(req, res) => {
     const {username, password}= req.body
-    console.log(username)
-
     try {
         const user = await UserModel.findOne({username:username})
         if(user){

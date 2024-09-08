@@ -3,13 +3,16 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv'
 // import { error } from 'console';
+import cors from 'cors';
 import AuthRoutes from "./Routes/AuthRoutes.js";
 import UserRoute from "./Routes/UserRoutes.js"
 import PostRoute from "./Routes/PostRoute.js"
 
 
 const app = express();
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors())
 
 dotenv.config()
 mongoose.connect(process.env.MONGO_DB).then(()=>app.listen(process.env.PORT, ()=>
