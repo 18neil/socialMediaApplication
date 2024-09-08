@@ -5,6 +5,8 @@ import dotenv from 'dotenv'
 // import { error } from 'console';
 import AuthRoutes from "./Routes/AuthRoutes.js";
 import UserRoute from "./Routes/UserRoutes.js"
+import PostRoute from "./Routes/PostRoute.js"
+
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -16,3 +18,4 @@ console.log("Server Strated"))).catch((error)=>console.log(error));
 
 app.use('/auth', AuthRoutes)
 app.use('/user', UserRoute)
+app.use('/post', PostRoute)
