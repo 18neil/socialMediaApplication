@@ -8,7 +8,7 @@ router.get('/:id', getUser)
 router.put('/:id', updateUser)
 router.delete('/:id', deletUser)
 router.put('/:id/follow', followUser)
-router.put('/:id/unfollow', UnfollowUser)
+router.put('/:id/unfollow', UnfollowUser) 
 
 
 

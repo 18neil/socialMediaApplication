@@ -15,6 +15,11 @@
     height: 2.5rem;
 }
 
+.navIcon>a>svg{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
 .fs-shareButton{
     padding: 1rem;
     width: 85%;

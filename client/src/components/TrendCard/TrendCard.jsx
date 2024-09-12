@@ -9,8 +9,8 @@ const TrendCard = () => {
             <h3>Treands for You</h3>
             {Followers.map((user)=>{
                 return(
-                    <div className="trend">
-                        <span>#{user.name}</span>
+                    <div className="trend" key={user.name}>
+                        <span>#{user.name }</span>
                         <span>{user.share}k shares</span>
                     </div>
                 )

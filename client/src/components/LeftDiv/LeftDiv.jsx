@@ -8,7 +8,7 @@ const LeftDiv = () =>{
     return (
         <div className="LeftDiv">
         <LogoSearch/>   
-        <ProfileCard/>
+        <ProfileCard location="homepage"/>
         <FollowerCard/>
         </div>
     )
