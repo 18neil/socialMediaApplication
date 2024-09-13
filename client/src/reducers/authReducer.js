@@ -7,6 +7,15 @@ switch(action.type){
         return{...state, authData: action.data, loading: false, error:false}
     case "Auth_FAIL":
         return{...state, loading:false, error:true}
+    case "LOG_OUT":
+        localStorage.clear();
+        return{...state, loading:false, error:false, authData: null,}
+
+    case "UPDATING_SUCCESS":
+        localStorage.setItem('profile', JSON.stringify({...action?.data}))
+        return{...state, authData: action.data, updateLoading: false, error:false}
+    case "UPDATING_FAIL":
+        return{...state,  updateLoading: false, error:false}
     default:
         return state
 

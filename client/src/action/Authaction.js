@@ -26,3 +26,8 @@ try {
 }
     
 }
+
+
+export const logout = () => async(dispatch)  => {
+    dispatch({type: "LOG_OUT"})
+}

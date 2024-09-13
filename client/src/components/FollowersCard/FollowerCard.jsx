@@ -1,28 +1,43 @@
-import React from "react";
-import {Followers} from '../../staticData/userData'
-
+import React, { useEffect, useState } from "react";
 import './FollowerCard.css'
+import User from "../User/User";
+import { useSelector } from "react-redux";
+import { getAllUser } from "../../api/UserRequest";
 
 
  const FollowerCard = () =>{
+
+  const decodeJwt = (token) => {
+    try {
+      const [, payload] = token.split('.');
+      const decoded = JSON.parse(atob(payload));
+      return decoded;
+    } catch (error) {
+      console.error('Error decoding token:', error);
+      return null;
+    }
+  };
+
+  const user = decodeJwt(useSelector((state) => state.auth.authData))
+    const [persons, setPersons] = useState([]);
+
+    useEffect(()=>{
+      const fetchPersons = async()=>{
+        const {data} = await getAllUser();
+        setPersons(data)
+      }
+      fetchPersons()
+    },[])
+
+
     return(
     <div className="FollowersCard">
-      <h3>Who is following You</h3>
+      <h3>People you may know</h3>
 
-    {Followers.map((user, id) => (
-
-       <div className="follower">
-        <div>
-        <img src={user.img} alt="" className="followerImg"/>
-        <div className="name">
-            <span>{user.name}</span>
-            <samp>{user.username}</samp>
-        </div>
-
-        </div>
-        <button className="button fc-button">Follow</button>
-       </div>
-        ))}
+    {persons.map((person, id) => {
+      if(person._id !== user._id){
+        <User person={person} key={id}/>
+      }})}
       
     </div>
     )

@@ -25,4 +25,4 @@ console.log("Server Strated"))).catch((error)=>console.log(error));
 app.use('/auth', AuthRoutes)
 app.use('/user', UserRoute) 
 app.use('/post', PostRoute)
-app.use('/upload', UploadRoute)
+app.use('/upload', UploadRoute)  

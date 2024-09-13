@@ -20,6 +20,9 @@ const ProfileCard = ({location}) => {
       };
 
     const user = decodeJwt(useSelector((state) => state.auth.authData))
+    // const  zz = decode.user;
+    console.log(user)
+
     const publicFolder = " http://localhost:5002/public/images/";
     
     const posts = useSelector((state) => state.postReducer.posts)
