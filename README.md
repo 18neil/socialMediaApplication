@@ -34,7 +34,7 @@ To run the application locally:
     ```bash
     npm start
     ```
-2. Open your browser and navigate to `http://localhost:3000`.
+2. Open your browser and navigate to `http://localhost:5002`.
 
 ## Contributing
 
